@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b59818efb64df41259cff836b498f588
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 316105
+  packageName: _UI - Easy Dynamic UI Elements
+  packageVersion: 1.0.1
+  assetPath: Assets/RK Studios/_UI Example/UI/PanelSettings.asset
+  uploadId: 753639

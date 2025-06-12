@@ -1,0 +1,341 @@
+/*
+    Press play    
+*/
+
+.press {
+    background-color: #0c0c0c;
+    width: 550px;
+    color: white;
+    font-size: 40px;
+    padding-bottom: 3px;
+    -unity-text-align: middle-center;
+    border-radius: 8px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+
+}
+
+.press--hidden {
+    display: none;
+}
+
+/*
+    Demo Wrapper
+*/
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: white;
+    transition: 0.5s opacity;
+    background-image: url('project://database/Assets/RK%20Studios/_UI%20Example/Images/Shapes/background.png');
+}
+
+.wrapper--active {
+    opacity: 1;
+}
+
+.wrapper__inner {
+    height: 100%;
+    width: 100%;
+}
+
+
+/*
+    Built with
+*/
+
+.built {
+    background-color: #0c0c0c;
+    width: 670px;
+    color: white;
+    font-size: 32px;
+    padding-bottom: 5px;
+    -unity-text-align: middle-center;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    position: absolute;
+    left: 50%;
+    translate: -50% -100%;
+    transition: 0.5s translate;
+}
+
+.wrapper--active .built {
+    translate: -50% 0;
+}
+
+/*
+    Slides
+*/
+
+.slide {
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.25s opacity;
+
+}
+
+.slide--active {
+    opacity: 1;
+}
+
+.slide__content {
+    max-width: 1550px;
+    width: 100%;
+}
+
+.slide__title {
+    font-size: 100px;
+    -unity-text-align: upper-center;
+    -unity-font-style: bold;
+}
+
+.title-slide .slide__title {
+    font-size: 135px;
+    margin-bottom: 20px;
+}
+
+.slide__description {
+    font-size: 28px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    white-space: normal;
+    -unity-text-align: upper-center;
+    color: #5e5e5e;
+    /*-unity-font: url("project://database/Assets/RK%20Studios/_UI%20Example/Fonts/SourceCodePro-Regular.ttf");*/
+}
+
+.title-slide .slide__description {
+    max-width: 600px;
+}
+
+/*
+    Slide navigation
+*/
+
+.slide-nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+}
+
+.slide-nav__button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin: 0 15px;
+    background-color: #0c0c0c;
+    background-size: 24px auto;
+}
+
+.slide-nav__button--previous {
+    background-image: url("project://database/Assets/RK%20Studios/_UI%20Example/Images/left.png");
+}
+
+.slide-nav__button--next {
+    background-image: url("project://database/Assets/RK%20Studios/_UI%20Example/Images/right.png");
+}
+
+/*
+    Code blocks
+*/
+
+.code-blocks {
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.code-block {
+    background-color: #efefef;
+    border-color: #d6d6d6;
+    border-width: 1px;
+    padding: 26px 40px;
+    border-radius: 8px;
+    margin-top: 24px;
+    font-size: 22px;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.elements-slide .code-block {
+    max-width: 1600px;
+    margin: 32px auto 0;
+}
+
+/*
+    Buttons
+*/
+
+.button {
+    margin-top: 60px;
+    background-color: #0c0c0c;
+    color: white;
+    padding: 32px 64px;
+    font-size: 24px;
+}
+
+/*
+ Background shapes
+*/
+
+.shapes {
+    height: 100%;
+    width: 100%;
+}
+
+.shapes__bg {
+    width: 100%;
+    height: 100%;
+    background-image: url('project://database/Assets/RK%20Studios/_UI%20Example/Images/Shapes/background.png');
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.5s opacity;
+    position: absolute;
+}
+
+.shape {
+    position: absolute;
+    transition-duration: 0.5s;
+    transition-property: all;
+}
+
+.wrapper--active .shape {
+    translate: none;
+}
+
+.shape--x {
+    width: 350.5px;
+    height: 318px;
+    background-image: url('project://database/Assets/RK%20Studios/_UI%20Example/Images/Shapes/x.png');
+    top: -85px;
+    left: -100px;
+    translate: -100% -100%;
+}
+
+.shape--dots {
+    width: 280.5px;
+    height: 259.5px;
+    background-image: url('project://database/Assets/RK%20Studios/_UI%20Example/Images/Shapes/dots.png');
+    top: -140px;
+    left: 320px;
+    translate: -50% -100%;
+}
+
+.shape--wedge2 {
+    width: 471px;
+    height: 433.5px;
+    background-image: url('project://database/Assets/RK%20Studios/_UI%20Example/Images/Shapes/wedge2.png');
+    top: -300px;
+    left: 640px;
+    translate: -10% -100%;
+}
+
+.shape--curly {
+    width: 260.5px;
+    height: 252.5px;
+    background-image: url('project://database/Assets/RK%20Studios/_UI%20Example/Images/Shapes/curly.png');
+    top: -150px;
+    left: 1150px;
+    translate: 10% -100%;
+}
+
+.shape--wedge3 {
+    width: 436.5px;
+    height: 210.5px;
+    background-image: url('project://database/Assets/RK%20Studios/_UI%20Example/Images/Shapes/wedge3.png');
+    top: -90px;
+    left: 1400px;
+    translate: 50% -100%;
+}
+
+.shape--oval2 {
+    width: 196px;
+    height: 451px;
+    background-image: url('project://database/Assets/RK%20Studios/_UI%20Example/Images/Shapes/oval2.png');
+    top: -70px;
+    right: -110px;
+    translate: 100% -100%;
+}
+
+
+.shape--circle {
+    width: 326px;
+    height: 327px;
+    background-image: url('project://database/Assets/RK%20Studios/_UI%20Example/Images/Shapes/circle.png');
+    top: 465px;
+    right: -180px;
+    translate: 100% 0;
+}
+
+
+.shape--rainbow {
+    width: 256px;
+    height: 283.5px;
+    background-image: url('project://database/Assets/RK%20Studios/_UI%20Example/Images/Shapes/rainbow.png');
+    bottom: -70px;
+    right: -70px;
+    translate: 100% 100%;
+}
+
+.shape--wedge {
+    width: 238px;
+    height: 209.5px;
+    background-image: url('project://database/Assets/RK%20Studios/_UI%20Example/Images/Shapes/wedge.png');
+    bottom: -80px;
+    right: 250px;
+    translate: 50% 100%;
+}
+
+
+.shape--oval {
+    width: 530px;
+    height: 230px;
+    background-image: url('project://database/Assets/RK%20Studios/_UI%20Example/Images/Shapes/oval.png');
+    bottom: -140px;
+    right: 580px;
+    translate: 10% 100%;
+}
+
+.shape--wedge4 {
+    width: 450.5px;
+    height: 214px;
+    background-image: url('project://database/Assets/RK%20Studios/_UI%20Example/Images/Shapes/wedge4.png');
+    bottom: -100px;
+    right: 1200px;
+    translate: -30% 100%;
+}
+
+.shape--star {
+    width: 345px;
+    height: 334.5px;
+    background-image: url('project://database/Assets/RK%20Studios/_UI%20Example/Images/Shapes/star.png');
+    bottom: -140px;
+    left: -120px;
+    translate: -100% 100%;
+
+}
+
+.shape--wavey {
+    width: 255px;
+    height: 422px;
+    background-image: url('project://database/Assets/RK%20Studios/_UI%20Example/Images/Shapes/wavey.png');
+    top: 350px;
+    left: -120px;
+    translate: -100% 0;
+}

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f7faa4378038d4d75ad49b56f0467205
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 12388, guid: 0000000000000000e000000000000000, type: 0}
+  disableValidation: 0
+AssetOrigin:
+  serializedVersion: 1
+  productId: 316105
+  packageName: _UI - Easy Dynamic UI Elements
+  packageVersion: 1.0.1
+  assetPath: Assets/RK Studios/_UI Example/UI/UnityDefaultRuntimeTheme.tss
+  uploadId: 753639
