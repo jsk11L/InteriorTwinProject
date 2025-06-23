@@ -7,7 +7,7 @@ public class TouchDragCameraController : MonoBehaviour
     private InputAction pointerPressAction;
     private InputAction pointerPositionAction;
 
-    // Banderas de estado
+    
     private bool isDragging = false;
     private bool pointerJustPressed = false;
 
@@ -38,7 +38,7 @@ public class TouchDragCameraController : MonoBehaviour
         pointerPressAction.performed += OnPointerPress_Callback;
         pointerPressAction.canceled += OnPointerRelease_Callback;
 
-        // Inicializar pitch basado en la rotación actual de la cámara
+        
         currentPitch = GetCurrentPitch();
     }
 
@@ -49,13 +49,13 @@ public class TouchDragCameraController : MonoBehaviour
         pointerPressAction.canceled -= OnPointerRelease_Callback;
     }
 
-    // El callback ahora solo levanta una bandera
+    
     private void OnPointerPress_Callback(InputAction.CallbackContext context)
     {
         pointerJustPressed = true;
     }
 
-    // Al soltar, detenemos el arrastre
+    
     private void OnPointerRelease_Callback(InputAction.CallbackContext context)
     {
         isDragging = false;
@@ -63,28 +63,28 @@ public class TouchDragCameraController : MonoBehaviour
 
     void LateUpdate()
     {
-        // 1. Comprobar si la cámara está en modo enfoque (lógica existente)
+        
         if (InteractionStateManager.Instance != null && InteractionStateManager.Instance.IsObjectSelectedViewActive())
         {
             isDragging = false; 
             return;
         }
 
-        // 2. Procesar un nuevo toque si ha ocurrido
+        
         if (pointerJustPressed)
         {
             pointerJustPressed = false;
 
-            // --- ¡NUEVA COMPROBACIÓN CRUCIAL! ---
-            // Si otro script ya consumió el input de este frame, no hacemos nada.
+            
+            
             if (InteractionStateManager.Instance != null && InteractionStateManager.Instance.IsInputConsumedThisFrame)
             {
-                isDragging = false; // Asegurarse de no empezar a arrastrar
+                isDragging = false; 
                 return;
             }
-            // ------------------------------------
+            
 
-            // Si llegamos aquí, el input no fue consumido, así que procedemos como antes
+            
             if (UnityEngine.EventSystems.EventSystem.current != null &&
                 UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
             {
@@ -97,7 +97,7 @@ public class TouchDragCameraController : MonoBehaviour
             }
         }
 
-        // 3. Si estamos en modo arrastre, mover la cámara (lógica existente)
+        
         if (isDragging)
         {
             HandleCameraDrag();
@@ -109,23 +109,23 @@ public class TouchDragCameraController : MonoBehaviour
         Vector2 currentPointerPosition = pointerPositionAction.ReadValue<Vector2>();
         Vector2 delta = currentPointerPosition - lastPointerPosition;
 
-        if (delta.sqrMagnitude > 0.01f) // Mover solo si hay un arrastre significativo
+        if (delta.sqrMagnitude > 0.01f) 
         {
             float xInput = invertX ? -delta.x : delta.x;
             float yInput = invertY ? -delta.y : delta.y;
 
-            // Rotación Horizontal (Yaw): Alrededor del eje Y del mundo
+            
             transform.Rotate(Vector3.up, -xInput * rotationSpeed, Space.World);
 
-            // Rotación Vertical (Pitch): Calculada y limitada localmente
+            
             currentPitch -= yInput * rotationSpeed;
             if (limitPitch)
             {
                 currentPitch = Mathf.Clamp(currentPitch, minPitch, maxPitch);
             }
 
-            // Aplicar la rotación final
-            transform.rotation = Quaternion.Euler(currentPitch, transform.eulerAngles.y, 0f); // Se fuerza el roll a 0
+            
+            transform.rotation = Quaternion.Euler(currentPitch, transform.eulerAngles.y, 0f); 
         }
 
         lastPointerPosition = currentPointerPosition;
@@ -134,7 +134,7 @@ public class TouchDragCameraController : MonoBehaviour
     private float GetCurrentPitch()
     {
         float pitch = transform.eulerAngles.x;
-        // Convertir el ángulo de Euler a un rango de -180 a 180 para un manejo consistente
+        
         if (pitch > 180f)
         {
             pitch -= 360f;

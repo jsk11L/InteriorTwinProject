@@ -26,6 +26,10 @@ MonoBehaviour:
     m_path: Assets/DesignEnvironment.unity
   - m_enabled: 1
     m_path: Assets/LibraryScene.unity
+  - m_enabled: 1
+    m_path: Assets/EnvironmentScene.unity
+  - m_enabled: 1
+    m_path: Assets/ProfileScene.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings: []
